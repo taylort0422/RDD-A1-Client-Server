@@ -104,7 +104,7 @@ namespace A1Server
 
                 if (dataReceived.IndexOf("insert ") == 0)
                 {
-                    if (InsertRecord(dataReceived.Remove(0, 8)))
+                    if (InsertRecord(dataReceived.Remove(0, 7)))
                     {
                         returnBuffer = Encoding.ASCII.GetBytes("RECORD ADDED");
                     }
@@ -118,7 +118,7 @@ namespace A1Server
                 }
                 else if (dataReceived.IndexOf("update ") == 0)
                 {
-                    if (UpdateRecord(dataReceived.Remove(0, 8)))
+                    if (UpdateRecord(dataReceived.Remove(0, 7)))
                     {
                         returnBuffer = Encoding.ASCII.GetBytes("RECORD ADDED");
                     }
@@ -130,7 +130,7 @@ namespace A1Server
                 }
                 else if (dataReceived.IndexOf("find ") == 0)
                 {
-                    returnBuffer = Encoding.ASCII.GetBytes(FindRecord(Int32.Parse(dataReceived.Remove(0, 6))));
+                    returnBuffer = Encoding.ASCII.GetBytes(FindRecord(Int32.Parse(dataReceived.Remove(0, 5))));
                     Console.WriteLine("FOUND : " + System.Text.Encoding.Default.GetString(returnBuffer));
                     //---write back the text to the client---
                     nwStream.Write(returnBuffer, 0, returnBuffer.Length);
