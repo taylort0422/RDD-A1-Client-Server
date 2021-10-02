@@ -113,7 +113,7 @@ namespace A1Server
                         returnBuffer = Encoding.ASCII.GetBytes("RECORD NOT ADDED");
                     }
 
-                    //---write back the text to the client---
+                    //---write back the text to the client--- 
                     nwStream.Write(returnBuffer, 0, returnBuffer.Length);
                 }
                 else if (dataReceived.IndexOf("update ") == 0)
