@@ -82,22 +82,11 @@ namespace A1Client
 
                     if (result == 2) //update
                     {
-                        if (command.Count() != 5)
-                        {
-                            continue;
-                        }
-
-                        if (user.nameValidation(command[2], command[3]) == false || user.numberValidation(command[4]) == false)
+                        if (command.Count() != 5 || user.nameValidation(command[2], command[3]) == false || user.dobValidation(command[4]) == false || user.numberValidation(command[1]) == false)
                         {
                             Console.WriteLine("Invalid input");
                             continue;
                         }
-                        if (user.numberValidation(command[1]) == false)
-                        {
-                            Console.WriteLine("Invalid input");
-                            continue;
-                        }
-
                         else
                         {
                             Console.WriteLine("\nAttempting to update your records...");
@@ -121,13 +110,11 @@ namespace A1Client
                             continue;
                         }
                     }
-
                     //receive reply from server before re-starting while loop
 
                     byte[] bytesToRead = new byte[client.ReceiveBufferSize];
                     int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
                     Console.WriteLine("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
-
                 }
                 client.Close();
             }
@@ -135,12 +122,7 @@ namespace A1Client
             {
                 Console.WriteLine("--Cannot connect to the server--");
             }
-
-            
         }
-
-
     }
-
 }
 
