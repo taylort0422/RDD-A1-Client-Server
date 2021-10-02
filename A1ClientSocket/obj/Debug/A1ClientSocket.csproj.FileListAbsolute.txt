@@ -1,0 +1,7 @@
+C:\Users\Taylor\Documents\SET year 2\Databases\A2ClientSocket\A1ClientSocket\bin\Debug\A1ClientSocket.exe.config
+C:\Users\Taylor\Documents\SET year 2\Databases\A2ClientSocket\A1ClientSocket\bin\Debug\A1ClientSocket.exe
+C:\Users\Taylor\Documents\SET year 2\Databases\A2ClientSocket\A1ClientSocket\bin\Debug\A1ClientSocket.pdb
+C:\Users\Taylor\Documents\SET year 2\Databases\A2ClientSocket\A1ClientSocket\obj\Debug\A1ClientSocket.csproj.AssemblyReference.cache
+C:\Users\Taylor\Documents\SET year 2\Databases\A2ClientSocket\A1ClientSocket\obj\Debug\A1ClientSocket.csproj.CoreCompileInputs.cache
+C:\Users\Taylor\Documents\SET year 2\Databases\A2ClientSocket\A1ClientSocket\obj\Debug\A1ClientSocket.exe
+C:\Users\Taylor\Documents\SET year 2\Databases\A2ClientSocket\A1ClientSocket\obj\Debug\A1ClientSocket.pdb
