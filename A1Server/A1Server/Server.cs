@@ -69,7 +69,7 @@ namespace A1Server
         }
         public void ServerStartup()
         {
-            Console.WriteLine("Server Starting...");
+            Console.WriteLine("\t\t--Server start up has begun--\n\n");
             //---listen at the specified IP and port no.---
             IPAddress localAdd = IPAddress.Parse(SERVER_IP);
             TcpListener listener = new TcpListener(localAdd, PORT_NO);
