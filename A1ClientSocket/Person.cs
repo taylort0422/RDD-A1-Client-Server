@@ -10,7 +10,7 @@ namespace A1Client
         public int MemberID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         public int parseInput(string message)
         {
@@ -64,11 +64,11 @@ namespace A1Client
             }
         }
 
-        public bool numberValidation(string dob)
+        public bool numberValidation(string number)
         {
             bool validate = false;
 
-            if (Regex.IsMatch(dob, "^[0-9]*$") && dob.Length == 6)
+            if (Regex.IsMatch(number, "^[0-9]*$"))
             {
                 validate = true;
                 return validate;
