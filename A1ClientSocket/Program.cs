@@ -106,15 +106,13 @@ namespace A1Client
                         Console.WriteLine("\nAttempting to update your records...");
                         byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(input);
                         nwStream.Write(bytesToSend, 0, bytesToSend.Length);
-
-                        //next do return validation
                     }
                 }
                 if (result == 3) //find
                 {
                     if (command.Count() == 2 && user.numberValidation(command[1]) == true)
                     {
-                        Console.WriteLine("\nAttempting to update your records...");
+                        Console.WriteLine("\nSearching for your record...");
                         byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(input);
                         nwStream.Write(bytesToSend, 0, bytesToSend.Length);
 
@@ -127,24 +125,13 @@ namespace A1Client
                     }
                 }
 
+                //receive reply from server before re-starting while loop
+
+                byte[] bytesToRead = new byte[client.ReceiveBufferSize];
+                int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
+                Console.WriteLine("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
+
             }
-
-
-            // -- Here we will get user input 
-
-            // -- Option 1 
-
-            // -- Option 2 
-
-            // -- Option 3 
-            //---send the text---
-            // -- sending text via socket Console.WriteLine("Sending : " + textToSend);
-            // --sending text via socket nwStream.Write(bytesToSend, 0, bytesToSend.Length);
-
-            //---read back the text---
-            byte[] bytesToRead = new byte[client.ReceiveBufferSize];
-            int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
-            Console.WriteLine("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
 
             client.Close();
         }
