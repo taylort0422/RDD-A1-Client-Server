@@ -42,12 +42,12 @@ namespace A1Client
 
         public void helpMessage()
         {
-            Console.WriteLine("\nInsert 'FirstName' 'LastName' 'YYMMDD'\n");
-            Console.WriteLine("\tAllows user to add a new entry to the datebase\n");
-            Console.WriteLine("Update 'MemberID' 'FirstName' 'LastName' 'MM-DD-YYYY'\n");
-            Console.WriteLine("\tUpdate an existing record\n");
-            Console.WriteLine("Find 'MemberID\n");
-            Console.WriteLine("\tSearch for a user's record\n");
+            Console.WriteLine("\nInsert 'FirstName' 'LastName' 'MM-DD-YYYY'");
+            Console.WriteLine("\t- Allows user to add a new entry to the datebase\n");
+            Console.WriteLine("Update 'MemberID' 'FirstName' 'LastName' 'MM-DD-YYYY'");
+            Console.WriteLine("\t- Update an existing record\n");
+            Console.WriteLine("Find 'MemberID'");
+            Console.WriteLine("\t- Search for a user's record\n");
         }
 
         public bool nameValidation(string first, string last)

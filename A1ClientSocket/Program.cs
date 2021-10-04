@@ -50,6 +50,7 @@ namespace A1Client
                     if (result == 4) //help menu
                     {
                         user.helpMessage();
+                        continue;
                     }
                     if (result == 5)
                     {
@@ -67,7 +68,7 @@ namespace A1Client
 
                         if (user.nameValidation(command[1], command[2]) == false || user.dobValidation(command[3]) == false)
                         {
-                            Console.WriteLine("Invalid input");
+                            Console.WriteLine("Invalid Input\n");
                             continue;
                         }
                         else
@@ -84,7 +85,7 @@ namespace A1Client
                     {
                         if (command.Count() != 5 || user.nameValidation(command[2], command[3]) == false || user.dobValidation(command[4]) == false || user.numberValidation(command[1]) == false)
                         {
-                            Console.WriteLine("Invalid input");
+                            Console.WriteLine("Invalid Input\n");
                             continue;
                         }
                         else
@@ -106,7 +107,7 @@ namespace A1Client
                         }
                         else
                         {
-                            Console.WriteLine("Invalid Input");
+                            Console.WriteLine("Invalid Input\n");
                             continue;
                         }
                     }
@@ -114,7 +115,7 @@ namespace A1Client
 
                     byte[] bytesToRead = new byte[client.ReceiveBufferSize];
                     int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
-                    Console.WriteLine("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
+                    Console.WriteLine("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead) + "\n");
                 }
                 client.Close();
             }
