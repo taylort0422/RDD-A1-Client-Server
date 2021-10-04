@@ -65,7 +65,7 @@ namespace A1Client
                             continue;
                         }
 
-                        if (user.nameValidation(command[1], command[2]) == false || user.numberValidation(command[3]) == false)
+                        if (user.nameValidation(command[1], command[2]) == false || user.dobValidation(command[3]) == false)
                         {
                             Console.WriteLine("Invalid input");
                             continue;

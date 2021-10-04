@@ -44,7 +44,7 @@ namespace A1Client
         {
             Console.WriteLine("\nInsert 'FirstName' 'LastName' 'YYMMDD'\n");
             Console.WriteLine("\tAllows user to add a new entry to the datebase\n");
-            Console.WriteLine("Update 'MemberID' 'FirstName' 'LastName' 'YYMMDD'\n");
+            Console.WriteLine("Update 'MemberID' 'FirstName' 'LastName' 'MM-DD-YYYY'\n");
             Console.WriteLine("\tUpdate an existing record\n");
             Console.WriteLine("Find 'MemberID\n");
             Console.WriteLine("\tSearch for a user's record\n");
@@ -81,7 +81,7 @@ namespace A1Client
 
         public bool dobValidation(string dob)
         {
-            var regx = new Regex(@"^(0[1-9]|1[012])[- ](0[1-9]|[12][0-9]|3[01])[-](19|20)\d\d$");
+            var regx = new Regex(@"^(0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[-](19|20)\d\d$");
             return (regx.IsMatch(dob));
         }
 
