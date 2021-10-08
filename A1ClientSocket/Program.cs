@@ -1,4 +1,19 @@
-﻿using System;
+﻿/*  Filename: Program.cs
+    By : Taylor Trainor, William Schwetz
+    Date : October 5, 2021
+    Description: File instantiates a client-side socket. 
+                 The socket parses user input and then sends data
+                 to a server.
+*/
+
+/*
+    *    Title:     Send and receive semple text over a socket
+    *    Authour:   Nudier Mena
+    *    Date:      April 16, 2012
+    *    Version:   1
+    *    Availability: https://stackoverflow.com/questions/10182751/server-client-send-receive-simple-text
+    */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +26,6 @@ namespace A1Client
 {
     class Program
     {
-        bool yes = false;
         const int PORT_NO = 5000;
         const string SERVER_IP = "127.0.0.1";
         static void Main(string[] args)
@@ -52,7 +66,7 @@ namespace A1Client
                         user.helpMessage();
                         continue;
                     }
-                    if (result == 5)
+                    if (result == 5) //quit
                     {
                         serverOn = false;
                         break;
@@ -117,12 +131,14 @@ namespace A1Client
                     int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
                     Console.WriteLine("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead) + "\n");
                 }
-                client.Close();
+                
             }
             catch (System.Net.Sockets.SocketException e)
             {
                 Console.WriteLine("--Cannot connect to the server--");
             }
+
+            Console.ReadLine();
         }
     }
 }

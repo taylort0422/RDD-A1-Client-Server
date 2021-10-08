@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*  Filename: Person.cs
+    By : Taylor Trainor, William Schwetz
+    Date : October 5, 2021
+    Description: Class contains validation functions
+    Class also consains assorted UI for users.
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -12,6 +18,11 @@ namespace A1Client
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
 
+        /*  Function:   parseInput
+            Purpose:    Check which command a user enters
+            Parameters: A string of user input
+            Returns:    An int indicating the user's answer
+        */
         public int parseInput(string message)
         {
             if (message.ToLower() == "insert")
@@ -40,6 +51,11 @@ namespace A1Client
             }
         }
 
+        /*  Function:   helpMessage
+            Purpose:    Prints out a basic summary of available commands
+            Parameters: N/A
+            Returns:    N/A
+        */
         public void helpMessage()
         {
             Console.WriteLine("\nInsert 'FirstName' 'LastName' 'MM-DD-YYYY'");
@@ -50,6 +66,11 @@ namespace A1Client
             Console.WriteLine("\t- Search for a user's record\n");
         }
 
+        /*  Function:   nameValidation
+            Purpose:    Validate a name is alphanumeric
+            Parameters: 2 strings of user input
+            Returns:    A bool indicating data validity
+        */
         public bool nameValidation(string first, string last)
         {
             bool validate = false;
@@ -64,6 +85,11 @@ namespace A1Client
             }
         }
 
+        /*  Function:   numberValidation
+            Purpose:    Validate a number 
+            Parameters: a string of user input
+            Returns:    A bool indicating data validity
+        */
         public bool numberValidation(string number)
         {
             bool validate = false;
@@ -79,6 +105,11 @@ namespace A1Client
             }
         }
 
+        /*  Function:   dobValidation
+            Purpose:    Validate a dob is intered in valid mm-dd-yyyy format
+            Parameters: A string of user input
+            Returns:    A bool indicating data validity
+        */
         public bool dobValidation(string dob)
         {
             var regx = new Regex(@"^(0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[-](19|20)\d\d$");
