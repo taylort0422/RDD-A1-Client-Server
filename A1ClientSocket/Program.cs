@@ -8,6 +8,7 @@
 
 /*
     *    Title:     Send and receive semple text over a socket
+    *    Purpose:   Create a socket to send data
     *    Authour:   Nudier Mena
     *    Date:      April 16, 2012
     *    Version:   1
